@@ -7,7 +7,9 @@ const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
 app.use(express.static("./public"));
+//app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
 
 
 app.use("/api/v1/users", users)

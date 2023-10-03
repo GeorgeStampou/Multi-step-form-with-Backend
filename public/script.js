@@ -1,6 +1,7 @@
 /* multiform for the entire form and forms is a table with each div of the "forms" by step, counter to change the step*/
 const multiForm = document.getElementById("form");
 const forms = [...multiForm.querySelectorAll("div.div-form")];
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
 const user = {};
 
 let formcounter = 0;
@@ -8,6 +9,7 @@ let formcounter = 0;
 /* on click function, takes all the input elements of current step form, changes to next form after checking with two
 functions for validation, changes to previous, and submit at the end.  */
 multiForm.addEventListener("click", async (event) =>{
+    event.preventDefault();
     
     const inputElements = [...forms[formcounter].querySelectorAll("input")];
     inputElements.forEach( (input)=>{
@@ -25,7 +27,7 @@ multiForm.addEventListener("click", async (event) =>{
         formcounter -= 1;
     } else if(event.target.matches("#finish-button") && checkValidity(inputElements)){
         
-        //event.preventDefault();
+        event.preventDefault();
         
         try {
             await axios.post("/api/v1/users", user);
@@ -36,6 +38,12 @@ multiForm.addEventListener("click", async (event) =>{
     } else return
     
     updateForm(formcounter);
+})
+
+checkboxes.forEach( (checkbox)=>{
+    checkbox.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    })
 })
 
 /*function to display the new form */
@@ -92,3 +100,4 @@ function checkPass(inputElements){
     return valid;
 
 }
+
