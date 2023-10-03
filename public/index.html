@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <form id="form">
+            <div id="form1" class="div-form form-step-active">
+                <div class="title">
+                    <h2>Step 1</h2>
+                    <h1>Create Account</h1>
+                </div>
+                <div class="user-input">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required >
+                </div>
+                <div class="user-input">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="user-input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" minlength="8" required>
+                </div>
+                <div class="user-input">
+                    <label for="repeat-pass">Repeat password</label>
+                    <input type="password" name="repeat-pass" id="repeat-pass" minlength="8" oninput="this.setCustomValidity('')" required>
+                </div>
+                <div class="btn-box btn-box-form1">
+                    <button type="button" id="next1" class="align-button-right" next >Next</button>
+                </div>
+                    
+            </div>
+            <div id="form2" class="div-form">
+                <div class="title">
+                    <h2>Step 2</h2>
+                    <h1>Account Details</h1>
+                </div>
+                <div class="user-input">
+                    <label for="country">Coutry</label>
+                    <input list="countries" id="country" name="country" required>
+                    <datalist id="countries">
+                        <option value="AL">Albania</option>
+                        <option value="AT">Austria</option>
+                        <option value="BY">Belarus</option>
+                        <option value="BE">Belgium</option>
+                        <option value="BA">Bosnia and Herzegovina</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="CA">Canada</option>
+                        <option value="HR">Croatia</option>                        
+                        <option value="CY">Cyprus</option>
+                        <option value="CZ">Czech Republic</option>
+                        <option value="DK">Denmark</option>
+                        <option value="EE">Estonia</option>
+                        <option value="FI">Finland</option>
+                        <option value="FR">France</option>
+                        <option value="GE">Georgia</option>
+                        <option value="DE">Germany</option>
+                        <option value="GR">Greece</option>
+                        <option value="HU">Hungary</option>
+                        <option value="IS">Iceland</option>
+                        <option value="IN">India</option>
+                        <option value="IE">Ireland</option>
+                        <option value="IT">Italy</option>
+                        <option value="JP">Japan</option>
+                        <option value="XK">Kosovo</option>
+                        <option value="LV">Latvia</option>
+                        <option value="LI">Liechtenstein</option>
+                        <option value="LT">Lithuania</option>
+                        <option value="LU">Luxembourg</option>
+                        <option value="NM">North Macedonia</option>
+                        <option value="MD">Moldova, Republic of</option>
+                        <option value="MC">Monaco</option>
+                        <option value="ME">Montenegro</option>    
+                        <option value="NL">Netherlands</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="NO">Norway</option>
+                        <option value="PL">Poland</option>
+                        <option value="PT">Portugal</option>
+                        <option value="RO">Romania</option>
+                        <option value="RU">Russia</option>
+                        <option value="RS">Serbia</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="SI">Slovenia</option>
+                        <option value="ES">Spain</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="TR">Turkey</option>
+                        <option value="UA">Ukraine</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US">United States</option>
+                        
+                    </datalist>
+                </div>
+                <div class="user-input">
+                    <div class="labels" id="labels">
+                        <label for="city">City</label>
+                        <label for="zip-code">Zip code</label>
+                    </div>
+                    <div class="input-group" id="input-group">
+                        <input type="text" id="city" name="city" required>
+                        <input type="text" id="zip-code" name="zip-code" required>
+                    </div>
+                </div>
+                <div class="user-input">
+                    <label for="address">Home address</label>
+                    <input type="text" name="address" id="address" required>
+                </div>
+                <div class="user-input user-input-row user-input-finish">
+                    <input id="newsletter" type="checkbox" name="newsletter" />
+                    <label for="newsletter" id="label-newsletter">  I want to subscribe to the newsletter!
+                    </label>
+                </div>
+                <div class="btn-box btn-box-margin">
+                    <button type="button" id="previous2" class="align-button-left" previous >Previous</button>
+                    <button type="button" id="next2" class="align-button-right" next >Next</button>
+                </div>
+            </div>
+            <div id="form3" class="div-form">
+                <div class="title">
+                    <h2>Step 3</h2>
+                    <h1>Terms of Service</h1>
+                </div>
+                <div class="terms">
+                    <p>These Terms of Service ("Agreement") constitute a legal agreement between you ("User," "you," or "your") 
+                        and Multi-step Form("Multi-step Form" "we," "us," or "our"). By creating a profile and using our platform, 
+                        you agree to abide by these terms and conditions. Please read <a href="#">this Agreement</a> carefully before using 
+                        our services.</p>
+                </div>
+                <div class="user-input user-input-row user-input-finish">
+                    <input id="terms" type="checkbox" name="terms" required/>
+                    <label for="terms" id="label-terms"> I accept the terms
+                    </label>
+                </div>
+                <div class="btn-box btn-box-margin">
+                    <button type="button" id="previous3" class="align-button-left" previous >Previous</button>
+                    <button type="submit" id="finish-button" class="align-button-right">Finish</button>
+                </div>
+
+            </div>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
