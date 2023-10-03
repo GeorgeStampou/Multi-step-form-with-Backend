@@ -27,8 +27,8 @@
                     <input type="password" name="password" id="password" minlength="8" required>
                 </div>
                 <div class="user-input">
-                    <label for="repeat-pass">Repeat password</label>
-                    <input type="password" name="repeat-pass" id="repeat-pass" minlength="8" oninput="this.setCustomValidity('')" required>
+                    <label for="repeatPass">Repeat password</label>
+                    <input type="password" name="repeatPass" id="repeatPass" minlength="8" oninput="this.setCustomValidity('')" required>
                 </div>
                 <div class="btn-box btn-box-form1">
                     <button type="button" id="next1" class="align-button-right" next >Next</button>
@@ -99,11 +99,11 @@
                 <div class="user-input">
                     <div class="labels" id="labels">
                         <label for="city">City</label>
-                        <label for="zip-code">Zip code</label>
+                        <label for="zipCode">Zip code</label>
                     </div>
                     <div class="input-group" id="input-group">
                         <input type="text" id="city" name="city" required>
-                        <input type="text" id="zip-code" name="zip-code" required>
+                        <input type="text" id="zipCode" name="zipCode" required>
                     </div>
                 </div>
                 <div class="user-input">
@@ -111,7 +111,7 @@
                     <input type="text" name="address" id="address" required>
                 </div>
                 <div class="user-input user-input-row user-input-finish">
-                    <input id="newsletter" type="checkbox" name="newsletter" />
+                    <input id="newsletter" type="checkbox" name="newsletter"/>
                     <label for="newsletter" id="label-newsletter">  I want to subscribe to the newsletter!
                     </label>
                 </div>
@@ -144,6 +144,9 @@
             </div>
         </form>
     </main>
+
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
