@@ -9,9 +9,10 @@ let formcounter = 0;
 /* on click function, takes all the input elements of current step form, changes to next form after checking with two
 functions for validation, changes to previous, and submit at the end.  */
 multiForm.addEventListener("click", async (event) =>{
-    event.preventDefault();
+    //event.preventDefault();
     
     const inputElements = [...forms[formcounter].querySelectorAll("input")];
+    //inputElements.forEach((input) => {console.log(input.value)});
     inputElements.forEach( (input)=>{
         if(input.type=== "checkbox"){
             user[input.name] = input.checked;
@@ -21,6 +22,7 @@ multiForm.addEventListener("click", async (event) =>{
         }
     })
     
+    
     if(event.target.matches("[next]") && checkValidity(inputElements) && checkPass(inputElements)){
         formcounter += 1;
     } else if(event.target.matches("[previous]")){
@@ -28,23 +30,25 @@ multiForm.addEventListener("click", async (event) =>{
     } else if(event.target.matches("#finish-button") && checkValidity(inputElements)){
         
         event.preventDefault();
-        
+        console.log(user);
         try {
             await axios.post("/api/v1/users", user);
-            console.log("user sent");
+            alert("user sent");
+            window.location.reload();
         } catch (error) {
-            console.log(error);
+            alert(error.response.data.msg);
         }
-    } else return
+        
+    }
     
     updateForm(formcounter);
 })
 
-checkboxes.forEach( (checkbox)=>{
-    checkbox.addEventListener("click", (e)=>{
-    e.stopPropagation();
-    })
-})
+// checkboxes.forEach( (checkbox)=>{
+//     checkbox.addEventListener("click", (e)=>{
+//         e.stopPropagation();
+//     })
+// })
 
 /*function to display the new form */
 function updateForm(counter){
